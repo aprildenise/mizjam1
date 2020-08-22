@@ -10,15 +10,24 @@ public class PlayerController : MonoBehaviour
     private bool isMoving;
     private Vector2 moveVelocity;
 
+    private GameManager game;
+
     // Start is called before the first frame update
     void Start()
     {
+        game = GameManager.instance;
         rb = GetComponent<Rigidbody2D>();
     }
 
     // Update is called once per frame
     void Update()
     {
+        if (game.isPaused)
+        {
+            moveVelocity = Vector2.zero;
+            return;
+        }
+
         // Get axis input for movement.
         Vector2 moveInput = new Vector2(Input.GetAxisRaw("Horizontal"), Input.GetAxisRaw("Vertical"));
         isMoving = moveInput != Vector2.zero;
@@ -28,7 +37,6 @@ public class PlayerController : MonoBehaviour
     private void FixedUpdate()
     {
         // Apply movement.
-        //rb.velocity = moveVelocity;
         if (isMoving) rb.MovePosition(rb.position + moveVelocity * Time.fixedDeltaTime);
     }
 }
