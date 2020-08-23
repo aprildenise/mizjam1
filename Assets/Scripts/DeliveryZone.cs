@@ -17,8 +17,13 @@ public class DeliveryZone : MonoBehaviour
     {
         if (collision.gameObject.Equals(objectToDeliver))
         {
-            game.ShowVictory();
+            OnTrigger();
         }
+    }
+
+    protected virtual void OnTrigger()
+    {
+        game.ShowVictory();
     }
 
 }

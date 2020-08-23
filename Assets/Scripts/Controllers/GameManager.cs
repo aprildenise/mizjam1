@@ -12,7 +12,7 @@ public class GameManager : MonoBehaviour
     public CanvasGroup loose;
     public TextMeshProUGUI damagePercentage;
 
-    public bool isPaused { get; private set; }
+    public bool isPaused;
     private int numCollapsingStructures;
 
     private float currentWeightedDamage; // Showed to the player and used to determine gameover.
@@ -26,6 +26,11 @@ public class GameManager : MonoBehaviour
             return;
         }
         instance = this;
+    }
+
+    public void SetIsPaused(bool paused)
+    {
+        this.isPaused = paused;
     }
 
     public void UpdateDamageText()

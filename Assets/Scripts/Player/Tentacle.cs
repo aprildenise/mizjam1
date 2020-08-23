@@ -7,6 +7,9 @@ public class Tentacle : MonoBehaviour
 
     [SerializeField] private Rigidbody2D rb;
     [SerializeField] private StickyEnd stickyEnd;
+    [SerializeField] private SpriteRenderer sprite;
+    [SerializeField] private Material active;
+    [SerializeField] private Material inactive;
     public float moveSpeed;
     private float alteredSpeed;
     private Vector2 moveVelocity;
@@ -17,6 +20,7 @@ public class Tentacle : MonoBehaviour
     private void Start()
     {
         game = GameManager.instance;
+        sprite.material = inactive;
     }
 
     private void FixedUpdate()
@@ -41,8 +45,6 @@ public class Tentacle : MonoBehaviour
             alteredSpeed = moveSpeed;
         }
 
-        Debug.Log(alteredSpeed);
-
         // Smoothen movement and apply it to the rigidbody.
         moveVelocity = direction * alteredSpeed * Time.fixedDeltaTime;
         rb.velocity = moveVelocity;
@@ -51,12 +53,14 @@ public class Tentacle : MonoBehaviour
     private void OnDisable()
     {
         rb.velocity = Vector2.zero;
+        sprite.material = inactive;
         stickyEnd.enabled = false;
     }
 
     private void OnEnable()
     {
         Debug.Log(gameObject.name + " is enabled.");
+        sprite.material = active;
         stickyEnd.enabled = true;
     }
 }
