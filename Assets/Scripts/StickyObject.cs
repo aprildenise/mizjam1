@@ -12,6 +12,7 @@ public class StickyObject : MonoBehaviour
 
     private void Start()
     {
+        rb = GetComponent<Rigidbody2D>();
         SetIsStuck(false, null);
     }
 

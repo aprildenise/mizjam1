@@ -38,5 +38,6 @@ public class PlayerController : MonoBehaviour
     {
         // Apply movement.
         if (isMoving) rb.MovePosition(rb.position + moveVelocity * Time.fixedDeltaTime);
+        else rb.velocity = Vector2.zero;
     }
 }

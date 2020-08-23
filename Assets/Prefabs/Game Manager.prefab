@@ -46,3 +46,4 @@ MonoBehaviour:
   victory: {fileID: 0}
   loose: {fileID: 0}
   damagePercentage: {fileID: 0}
+  isPaused: 0
