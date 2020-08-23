@@ -24,8 +24,14 @@ public class CollapsingStructure : MonoBehaviour
     {
         if (collision.gameObject.layer == LayerMask.NameToLayer("Environment") 
             || collision.gameObject.layer == LayerMask.NameToLayer("Collapsing")) return;
-        float damage = GetChangeInPosition() * 100.5f;
-        game.AddDamage(damage);
+
+        float damage = GetChangeInPosition();
+
+        if (damage > 10) return;
+
+        // Clamp at a certain distance
+
+        game.AddDamage(damage * 100f);
     }
 
 

@@ -15,6 +15,9 @@ public class StickyEnd : MonoBehaviour
     private void Start()
     {
         gameWorld = GameManager.instance;
+
+        // Disable by default.
+        this.enabled = false;
     }
 
     private void Update()
@@ -27,20 +30,25 @@ public class StickyEnd : MonoBehaviour
                 StickyObject sticky = hit.GetComponent<StickyObject>();
                 Transform stickyTransform = sticky.transform;
 
+                // Make sure to only interact with objects that are unstuck and stuck on this tentacle.
+                if (!sticky.stuckTo.Equals(null) && !sticky.stuckTo.Equals(transform) && !sticky.stuckTo.Equals(gameWorld.gameObject.transform)) continue;
+
                 // If this object is already stuck, put it back in the world.
                 if (sticky.isStuck)
                 {
+                    Debug.Log(sticky.gameObject.name + " set to unstuck");
                     stickyTransform.parent = gameWorld.gameObject.transform;
-                    sticky.SetIsStuck(false);
+                    sticky.SetIsStuck(false, gameWorld.gameObject.transform);
                 }
                 // Attach this object as a child of this transform to make it stick to it.
                 else
                 {
+                    Debug.Log(sticky.gameObject.name + " set to stuck on " + this.gameObject.name);
                     Vector2 scale = stickyTransform.localScale;
                     Vector2 position = stickyTransform.localPosition;
                     Quaternion rotation = stickyTransform.localRotation;
                     stickyTransform.parent = transform;
-                    sticky.SetIsStuck(true);
+                    sticky.SetIsStuck(true, transform);
                 }
             }
         }

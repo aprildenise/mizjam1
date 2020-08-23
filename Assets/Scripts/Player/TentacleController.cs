@@ -7,8 +7,18 @@ public class TentacleController : MonoBehaviour
 
     public Tentacle[] tentacles;
 
+    private GameManager game;
+
+    private void Start()
+    {
+        game = GameManager.instance;
+    }
+
     private void Update()
     {
+
+        if (game.isPaused) return;
+
         if (Input.GetKey(KeyCode.Alpha1))
         {
             tentacles[0].enabled = true;
