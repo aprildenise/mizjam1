@@ -28,18 +28,19 @@ public class StickyEnd : MonoBehaviour
             foreach (Collider2D hit in hits)
             {
                 StickyObject sticky = hit.GetComponent<StickyObject>();
-                if (sticky == null) return;
-                Transform stickyTransform = sticky.transform;
+                if (sticky == null) continue;
+                Transform stickyTransform = sticky.gameObject.transform;
+                Transform gameWorldTransform = gameWorld.gameObject.transform;
 
                 // Make sure to only interact with objects that are unstuck and stuck on this tentacle.
-                if (!sticky.stuckTo.Equals(null) && !sticky.stuckTo.Equals(transform) && !sticky.stuckTo.Equals(gameWorld.gameObject.transform)) continue;
+                if (!sticky.stuckTo.Equals(null) && !sticky.stuckTo.Equals(transform) && !sticky.stuckTo.Equals(gameWorldTransform)) continue;
 
                 // If this object is already stuck, put it back in the world.
                 if (sticky.isStuck)
                 {
                     Debug.Log(sticky.gameObject.name + " set to unstuck");
-                    stickyTransform.parent = gameWorld.gameObject.transform;
-                    sticky.SetIsStuck(false, gameWorld.gameObject.transform);
+                    stickyTransform.parent = gameWorldTransform;
+                    sticky.SetIsStuck(false, gameWorldTransform);
                 }
                 // Attach this object as a child of this transform to make it stick to it.
                 else

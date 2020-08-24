@@ -440,7 +440,7 @@ MonoBehaviour:
   interactionRadius: 1
   interactWith:
     serializedVersion: 2
-    m_Bits: 512
+    m_Bits: 2560
 --- !u!1 &9093122008347633965
 GameObject:
   m_ObjectHideFlags: 0
@@ -652,7 +652,7 @@ MonoBehaviour:
   interactionRadius: 1
   interactWith:
     serializedVersion: 2
-    m_Bits: 512
+    m_Bits: 2560
 --- !u!1 &9093122008380821944
 GameObject:
   m_ObjectHideFlags: 0
@@ -1860,7 +1860,7 @@ MonoBehaviour:
   interactionRadius: 1
   interactWith:
     serializedVersion: 2
-    m_Bits: 512
+    m_Bits: 2560
 --- !u!1 &9093122008990742911
 GameObject:
   m_ObjectHideFlags: 0
@@ -2969,7 +2969,7 @@ MonoBehaviour:
   interactionRadius: 1
   interactWith:
     serializedVersion: 2
-    m_Bits: 512
+    m_Bits: 2560
 --- !u!1 &9093122009752117550
 GameObject:
   m_ObjectHideFlags: 0
