@@ -15,7 +15,7 @@ public class EyeFollowMouse : MonoBehaviour
     private void Awake()
     {
         origin = transform.localPosition;
-        Debug.Log(origin);
+        //Debug.Log(origin);
     }
 
     private void LateUpdate()

@@ -28,6 +28,7 @@ public class StickyEnd : MonoBehaviour
             foreach (Collider2D hit in hits)
             {
                 StickyObject sticky = hit.GetComponent<StickyObject>();
+                if (sticky == null) return;
                 Transform stickyTransform = sticky.transform;
 
                 // Make sure to only interact with objects that are unstuck and stuck on this tentacle.
@@ -44,9 +45,6 @@ public class StickyEnd : MonoBehaviour
                 else
                 {
                     Debug.Log(sticky.gameObject.name + " set to stuck on " + this.gameObject.name);
-                    Vector2 scale = stickyTransform.localScale;
-                    Vector2 position = stickyTransform.localPosition;
-                    Quaternion rotation = stickyTransform.localRotation;
                     stickyTransform.parent = transform;
                     sticky.SetIsStuck(true, transform);
                 }

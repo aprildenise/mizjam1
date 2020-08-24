@@ -6,7 +6,6 @@ public class ShowUIOnDelivery : DeliveryZone
 {
 
     public CanvasGroup canvas;
-    private GameManager game;
 
     private void Start()
     {

@@ -98,7 +98,7 @@ LightmapSettings:
     m_TrainingDataDestination: TrainingData
     m_LightProbeSampleCountMultiplier: 4
   m_LightingDataAsset: {fileID: 0}
-  m_UseShadowmask: 1
+  m_UseShadowmask: 0
 --- !u!196 &4
 NavMeshSettings:
   serializedVersion: 2
@@ -1616,7 +1616,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0}
   m_AnchorMax: {x: 0.5, y: 0}
-  m_AnchoredPosition: {x: 0, y: 494.5}
+  m_AnchoredPosition: {x: 0, y: 494}
   m_SizeDelta: {x: 3363.2896, y: 739.99915}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!225 &420253729
@@ -2736,7 +2736,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0}
   m_AnchorMax: {x: 0.5, y: 0}
-  m_AnchoredPosition: {x: 0, y: 494.5}
+  m_AnchoredPosition: {x: 0, y: 494}
   m_SizeDelta: {x: 3363.2896, y: 739.99915}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &1442301924
@@ -3053,8 +3053,8 @@ GameObject:
   m_Component:
   - component: {fileID: 1546057641}
   - component: {fileID: 1546057640}
-  - component: {fileID: 1546057637}
   - component: {fileID: 1546057638}
+  - component: {fileID: 1546057637}
   m_Layer: 0
   m_Name: Delivery Zone (2)
   m_TagString: Untagged
@@ -3625,7 +3625,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 81.6
+  m_fontSize: 60
   m_fontSizeBase: 36
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -4076,7 +4076,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0}
   m_AnchorMax: {x: 0.5, y: 0}
-  m_AnchoredPosition: {x: 0, y: 494.5}
+  m_AnchoredPosition: {x: 0, y: 494}
   m_SizeDelta: {x: 3363.2896, y: 739.99915}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!225 &1880346367
@@ -8920,8 +8920,8 @@ MonoBehaviour:
   m_ReferencePixelsPerUnit: 100
   m_ScaleFactor: 1
   m_ReferenceResolution: {x: 3840, y: 2160}
-  m_ScreenMatchMode: 0
-  m_MatchWidthOrHeight: 0
+  m_ScreenMatchMode: 2
+  m_MatchWidthOrHeight: 1
   m_PhysicalUnit: 3
   m_FallbackScreenDPI: 96
   m_DefaultSpriteDPI: 96

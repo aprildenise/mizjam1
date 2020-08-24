@@ -6,14 +6,14 @@ public class DeliveryZone : MonoBehaviour
 {
 
     public GameObject objectToDeliver;
-    private GameManager game;
+    protected GameManager game;
 
     private void Start()
     {
         game = GameManager.instance;
     }
 
-    private void OnTriggerEnter2D(Collider2D collision)
+    protected void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.gameObject.Equals(objectToDeliver))
         {

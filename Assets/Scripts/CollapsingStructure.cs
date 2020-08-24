@@ -24,7 +24,7 @@ public class CollapsingStructure : MonoBehaviour
         if (collision.gameObject.layer == LayerMask.NameToLayer("Environment") 
             || collision.gameObject.layer == LayerMask.NameToLayer("Collapsing") || collision.gameObject.layer == LayerMask.NameToLayer("Sticky"))
         {
-            if (GetChangeInPosition() < 1) return;
+            if (GetChangeInPosition() < 5) return;
         }
 
         Debug.Log("collision from:" + collision.gameObject.name);
