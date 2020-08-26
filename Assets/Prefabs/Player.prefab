@@ -440,7 +440,7 @@ MonoBehaviour:
   interactionRadius: 1
   interactWith:
     serializedVersion: 2
-    m_Bits: 512
+    m_Bits: 2560
 --- !u!1 &9093122008347633965
 GameObject:
   m_ObjectHideFlags: 0
@@ -652,7 +652,7 @@ MonoBehaviour:
   interactionRadius: 1
   interactWith:
     serializedVersion: 2
-    m_Bits: 512
+    m_Bits: 2560
 --- !u!1 &9093122008380821944
 GameObject:
   m_ObjectHideFlags: 0
@@ -1860,7 +1860,7 @@ MonoBehaviour:
   interactionRadius: 1
   interactWith:
     serializedVersion: 2
-    m_Bits: 512
+    m_Bits: 2560
 --- !u!1 &9093122008990742911
 GameObject:
   m_ObjectHideFlags: 0
@@ -2155,8 +2155,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: 78269181
+  m_SortingLayer: 2
   m_SortingOrder: 0
   m_Sprite: {fileID: 5271250782899346372, guid: 7c2721223db3517488eec6bd5e9eff9f,
     type: 3}
@@ -2384,8 +2384,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: -1702869639
-  m_SortingLayer: 3
+  m_SortingLayerID: 78269181
+  m_SortingLayer: 2
   m_SortingOrder: 0
   m_Sprite: {fileID: 4875567142111612187, guid: 7c2721223db3517488eec6bd5e9eff9f,
     type: 3}
@@ -2463,8 +2463,8 @@ CapsuleCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0.07}
-  m_Size: {x: 0.57, y: 0.29}
+  m_Offset: {x: 0.006763043, y: 0.064253114}
+  m_Size: {x: 0.37992927, y: 0.24567117}
   m_Direction: 1
 --- !u!1 &9093122009218289899
 GameObject:
@@ -2969,7 +2969,7 @@ MonoBehaviour:
   interactionRadius: 1
   interactWith:
     serializedVersion: 2
-    m_Bits: 512
+    m_Bits: 2560
 --- !u!1 &9093122009752117550
 GameObject:
   m_ObjectHideFlags: 0

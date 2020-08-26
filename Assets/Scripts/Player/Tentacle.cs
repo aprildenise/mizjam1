@@ -8,8 +8,8 @@ public class Tentacle : MonoBehaviour
     [SerializeField] private Rigidbody2D rb;
     [SerializeField] private StickyEnd stickyEnd;
     [SerializeField] private SpriteRenderer sprite;
-    [SerializeField] private Material active;
-    [SerializeField] private Material inactive;
+    [SerializeField] private Material active; // Material to show when this script is enabled.
+    [SerializeField] private Material inactive; // Material to show when this script is disabled.
     public float moveSpeed;
     private float alteredSpeed;
     private Vector2 moveVelocity;
@@ -23,6 +23,10 @@ public class Tentacle : MonoBehaviour
         sprite.material = inactive;
     }
 
+
+    /// <summary>
+    /// Get mouse movement to move this tentacle.
+    /// </summary>
     private void FixedUpdate()
     {
         if (game.isPaused)
@@ -36,6 +40,7 @@ public class Tentacle : MonoBehaviour
         float magnitude = (mousePosition - (Vector2)rb.position).magnitude;
         direction = (mousePosition - (Vector2)rb.position).normalized;
 
+        // Alter the speed of the tentacle so that it moves faster when further away.
         if (magnitude > 5f)
         {
             alteredSpeed = moveSpeed * (magnitude * .75f);
@@ -50,6 +55,10 @@ public class Tentacle : MonoBehaviour
         rb.velocity = moveVelocity;
     }
 
+    /// <summary>
+    /// "Turn off" this tentacle when the script is not active, by resetting its velocity, changing its shader, and
+    /// turning off its stickyEnd.
+    /// </summary>
     private void OnDisable()
     {
         rb.velocity = Vector2.zero;
@@ -57,6 +66,10 @@ public class Tentacle : MonoBehaviour
         stickyEnd.enabled = false;
     }
 
+
+    /// <summary>
+    /// "Turn on" this tentacle.
+    /// </summary>
     private void OnEnable()
     {
         Debug.Log(gameObject.name + " is enabled.");
